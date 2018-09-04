@@ -1,7 +1,7 @@
 .DS_Store
 input/
 output/
-
+metastore_db/
 
 
 # Byte-compiled / optimized / DLL files
