@@ -1,7 +1,7 @@
 # Instalación y configuración de las herramientas en Mac OS
 
 
-Esta guía describe la instalación y configuración detallada de las herramientas en MacOS.
+Esta guía describe la instalación y configuración detallada de Apache Hadoop para el sistema operativo MacOS en modo pseudo-distribuido.
 
 ### Paso 1
 
@@ -50,10 +50,13 @@ export PATH="$JAVA_HOME/bin:$HADOOP_HOME:$PATH"
 
 Verifique la instalación. Para ello, cierre y habra `Terminal`. Luego digite `hadoop` en la línea de comandos. Como resultado, debe imprimirse la ayuda de hadoop en la pantalla.
 
+**Nota.--** En este paso, Apache Hadoop se puede ejecutar en modo *standalone*.
+
 
 ### Paso 6
 
- 
+**Nota.--** En este paso se inicia la configuración para ejecutar Apache Hadoop en modo *pseudo-distribuido*.
+
 Edite el archivo `etc/hadoop/core-site.xml` y agregue el siguiente contenido:
 
     <configuration>
@@ -71,8 +74,10 @@ Agregue el siguiente contenido al archivo `etc/hadoop/hdfs-site.xml`:
             <value>1</value>
         </property>
     </configuration>
+
+**Nota.--** En el modo *standalone*, no debe haber nada entre `<configuration>` y `</configuration>`.
     
-    
+ 
 ### Paso 7
 
 En **`Preferencias del sistema > Compartir`**, active la opción de Sesión Remota.
@@ -86,8 +91,7 @@ En el prompt de comandos verifique que se puede conectar al localhost sin passwo
 
     ssh localhost
 
-en el Terminal. Si no se puede conectar directamente, ejecute los siguientes comandos 
-en el Terminal.
+en el Terminal. Si no se puede conectar directamente, ejecute los siguientes comandos:
 
 ```
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
@@ -104,7 +108,7 @@ chmod 0600 ~/.ssh/authorized_keys
 
 ### Paso 9
 
-Formatee el sistema de archivos de Hadoop desde el Terminal.
+Formatee el sistema de archivos de Hadoop
 
 ```
 $HADOOP_HOME/bin/hdfs namenode -format
