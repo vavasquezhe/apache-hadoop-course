@@ -20,7 +20,7 @@ http://hadoop.apache.org/releases.html
 
 ### Paso 3
 
-Habrá `Terminal`, navegue hasta el directorio de descargas y descomprima Hadoop. 
+Abra el `Terminal`, navegue hasta el directorio de descargas y descomprima Hadoop. 
 Luego renombre el directory y copielo a su directorio de usuario. En el resto de 
 esta guía se asumirá que esta es la ubicación de la instalación. Siempre 
 reemplace `USERNAME` por su nombre de usuario.
